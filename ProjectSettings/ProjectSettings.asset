@@ -414,9 +414,9 @@ PlayerSettings:
     m_GraphicsJobs: 0
   m_BuildTargetGraphicsJobMode:
   - m_BuildTarget: PS4Player
-    m_GraphicsJobMode: -674185664
+    m_GraphicsJobMode: 224312528
   - m_BuildTarget: XboxOnePlayer
-    m_GraphicsJobMode: -674185664
+    m_GraphicsJobMode: 224312528
   m_BuildTargetGraphicsAPIs:
   - m_BuildTarget: AndroidPlayer
     m_APIs: 08000000
