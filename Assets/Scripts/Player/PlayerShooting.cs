@@ -4,7 +4,7 @@ public class PlayerShooting : MonoBehaviour
 {
     public int damagePerShot;
     public float timeBetweenBullets;
-    public float range;
+    public float range = 100f;
 
 
     float timer;
@@ -70,6 +70,11 @@ public class PlayerShooting : MonoBehaviour
 
         if(Physics.Raycast (shootRay, out shootHit, range, shootableMask))
         {
+            EnemyHealth enemyHealth = shootHit.collider.GetComponent <EnemyHealth> ();
+            if(enemyHealth != null)
+            {
+                enemyHealth.TakeDamage (damagePerShot, shootHit.point);
+            }
             gunLine.SetPosition (1, shootHit.point);
         }
         else
