@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int startingHealth = 10;
+    public int startingHealth;
     public int currentHealth;
+    public Slider healthSlider;
+    public Image damageImage;
     public AudioClip deathClip;
     public float flashSpeed = 5f;
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
@@ -18,6 +20,7 @@ public class PlayerHealth : MonoBehaviour
     PlayerMovement playerMovement;
     PlayerShooting playerShooting;
     bool isDead;
+    bool damaged;
 
 
     void Awake ()
@@ -29,10 +32,28 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = startingHealth;
     }
 
+
+    void Update ()
+    {
+        if(damaged)
+        {
+            damageImage.color = flashColour;
+        }
+        else
+        {
+            damageImage.color = Color.Lerp (damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+        }
+        damaged = false;
+    }
+
+
     public void TakeDamage (int amount)
     {
+        damaged = true;
 
         currentHealth -= amount;
+
+        healthSlider.value = currentHealth;
 
         playerAudio.Play ();
 
