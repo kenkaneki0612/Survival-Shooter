@@ -5217,7 +5217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 0.5
-  attackDamage: 1
+  attackDamage: 3
 --- !u!114 &114491779595983746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5230,7 +5230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9b9d14572410594cb85d40eedfb150c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 10
+  startingHealth: 20
   currentHealth: 0
   sinkSpeed: 2.5
   scoreValue: 20
